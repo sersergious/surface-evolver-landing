@@ -4,17 +4,19 @@ import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-base-100">
+      {/* engineering-grid backdrop, echoes the app icon */}
+      <div aria-hidden className="bg-grid pointer-events-none absolute inset-0 text-base-content" />
       {/* subtle radial glow behind the screenshot */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-1/3 h-[600px] bg-[radial-gradient(ellipse_at_center,theme(colors.primary/12%),transparent_65%)]"
+        className="pointer-events-none absolute inset-x-0 top-1/3 h-[600px] bg-[radial-gradient(ellipse_at_center,color-mix(in_oklab,var(--color-primary)_12%,transparent),transparent_65%)]"
       />
       <div className="relative hero-content flex-col gap-14 py-20 px-4 text-center max-w-6xl mx-auto">
         <div className="space-y-6">
           <div className="badge badge-primary badge-outline gap-1 text-xs">
             macOS · Linux · Apache 2.0
           </div>
-          <h1 className="text-5xl sm:text-6xl font-bold leading-tight text-base-content">
+          <h1 className="text-5xl sm:text-6xl font-bold leading-tight tracking-tight text-base-content">
             Minimal surfaces.{" "}
             <span className="text-primary">Maximum clarity.</span>
           </h1>
@@ -34,8 +36,6 @@ export default function Hero() {
           <div className="flex flex-wrap gap-3 justify-center">
             <a
               href="https://github.com/sersergious/surface-evolver/releases/latest"
-              target="_blank"
-              rel="noopener noreferrer"
               className="btn btn-primary gap-2"
             >
               <ArrowDownTrayIcon className="h-5 w-5" />
@@ -43,8 +43,6 @@ export default function Hero() {
             </a>
             <a
               href="https://github.com/sersergious/surface-evolver/releases/latest"
-              target="_blank"
-              rel="noopener noreferrer"
               className="btn btn-outline gap-2"
             >
               <ArrowDownTrayIcon className="h-5 w-5" />

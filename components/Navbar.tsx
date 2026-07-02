@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 import ThemeToggle from "./ThemeToggle";
 
@@ -5,19 +6,14 @@ export default function Navbar() {
   return (
     <div className="navbar bg-base-100/80 backdrop-blur-sm sticky top-0 z-50 border-b border-base-200">
       <div className="navbar-start">
-        <a href="#" className="flex items-center gap-2 px-2">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            className="h-7 w-7 text-primary"
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <circle cx="12" cy="12" r="3" />
-            <ellipse cx="12" cy="12" rx="10" ry="4" />
-            <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)" />
-            <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)" />
-          </svg>
+        <a href="#" className="flex items-center gap-2.5 px-2">
+          <Image
+            src="/surface-evolver.svg"
+            alt="Surface Evolver icon"
+            width={32}
+            height={32}
+            className="h-8 w-8"
+          />
           <span className="font-semibold text-base-content tracking-tight hidden sm:inline">
             Surface Evolver
           </span>

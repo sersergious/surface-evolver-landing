@@ -22,7 +22,7 @@ const platforms = [
       </svg>
     ),
     href: "https://github.com/sersergious/surface-evolver/releases/latest",
-    badge: "Unsigned",
+    badge: "tar.gz",
     features: ["GTK-WebKit rendering", "x86-64 only", "Ubuntu 22.04+"],
   },
 ];

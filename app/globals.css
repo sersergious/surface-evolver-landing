@@ -2,3 +2,35 @@
 @plugin "daisyui" {
   themes: light --default, dark --prefersdark;
 }
+
+/* Brand: steel blues from the app icon instead of daisyUI's stock purple. */
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #3d6bc4;
+  --color-primary-content: #ffffff;
+  --color-secondary: #46708a;
+  --color-secondary-content: #ffffff;
+  --color-accent: #2a9d8f;
+  --color-accent-content: #ffffff;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  prefersdark: true;
+  --color-primary: #6f9be8;
+  --color-primary-content: #0d1521;
+  --color-secondary: #7ba7c2;
+  --color-secondary-content: #0d1521;
+  --color-accent: #4fc0b2;
+  --color-accent-content: #0d1521;
+}
+
+/* Engineering grid backdrop (echoes the app icon) — used behind the hero. */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, currentColor 7%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, currentColor 7%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 85%);
+}
