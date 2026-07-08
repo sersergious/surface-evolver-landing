@@ -44,8 +44,8 @@ export default function Footer() {
         </p>
         <p className="text-base-content/30 text-xs">
           Built with{" "}
-          <a href="https://blackboard.sh/electrobun/" target="_blank" rel="noopener noreferrer" className="link link-hover">
-            Electrobun
+          <a href="https://tauri.app" target="_blank" rel="noopener noreferrer" className="link link-hover">
+            Tauri
           </a>
           {" · "}
           <a href="https://threejs.org" target="_blank" rel="noopener noreferrer" className="link link-hover">

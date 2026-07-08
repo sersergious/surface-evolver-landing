@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="relative hero-content flex-col gap-14 py-20 px-4 text-center max-w-6xl mx-auto">
         <div className="space-y-6">
           <div className="badge badge-primary badge-outline gap-1 text-xs">
-            macOS · Linux · Apache 2.0
+            macOS · Linux · Windows · Apache 2.0
           </div>
           <h1 className="text-5xl sm:text-6xl font-bold leading-tight tracking-tight text-base-content">
             Minimal surfaces.{" "}
@@ -47,6 +47,13 @@ export default function Hero() {
             >
               <ArrowDownTrayIcon className="h-5 w-5" />
               Download for Linux
+            </a>
+            <a
+              href="https://github.com/sersergious/surface-evolver/releases/latest"
+              className="btn btn-outline gap-2"
+            >
+              <ArrowDownTrayIcon className="h-5 w-5" />
+              Download for Windows
             </a>
           </div>
         </div>
