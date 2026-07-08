@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 
 export default function Hero() {
   return (
@@ -33,29 +32,6 @@ export default function Hero() {
             C engine — datafile editor, full command language, and a live 3D
             viewer in one window. Load, evolve, refine, inspect, export.
           </p>
-          <div className="flex flex-wrap gap-3 justify-center">
-            <a
-              href="https://github.com/sersergious/surface-evolver/releases/latest"
-              className="btn btn-primary gap-2"
-            >
-              <ArrowDownTrayIcon className="h-5 w-5" />
-              Download for macOS
-            </a>
-            <a
-              href="https://github.com/sersergious/surface-evolver/releases/latest"
-              className="btn btn-outline gap-2"
-            >
-              <ArrowDownTrayIcon className="h-5 w-5" />
-              Download for Linux
-            </a>
-            <a
-              href="https://github.com/sersergious/surface-evolver/releases/latest"
-              className="btn btn-outline gap-2"
-            >
-              <ArrowDownTrayIcon className="h-5 w-5" />
-              Download for Windows
-            </a>
-          </div>
         </div>
 
         {/* Real app screenshot: cube.fe refined + evolved under its volume constraint */}
