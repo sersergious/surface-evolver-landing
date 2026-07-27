@@ -10,6 +10,9 @@ export default function ThemeToggle() {
     const stored = localStorage.getItem("se-theme");
     if (stored === "dark" || stored === "light") {
       setTheme(stored);
+      // Also re-apply it: without this the icon reflects the saved choice but
+      // the page keeps rendering the OS theme, and the two disagree.
+      document.documentElement.setAttribute("data-theme", stored);
     } else {
       const prefersDark = window.matchMedia(
         "(prefers-color-scheme: dark)"

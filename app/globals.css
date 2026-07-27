@@ -26,6 +26,26 @@
   --color-accent-content: #0d1521;
 }
 
+/* Hero app screenshot: show the capture matching the active theme.
+   Three cases, because the toggle sets [data-theme] on <html> but on a first
+   visit no attribute exists yet and daisyUI falls back to the OS preference:
+     1. no [data-theme]  -> follow prefers-color-scheme
+     2. [data-theme=dark]  -> dark shot
+     3. [data-theme=light] -> light shot (must beat the media query above) */
+.shot-dark { display: none; }
+.shot-light { display: block; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .shot-dark { display: block; }
+  :root:not([data-theme]) .shot-light { display: none; }
+}
+
+:root[data-theme="dark"] .shot-dark { display: block; }
+:root[data-theme="dark"] .shot-light { display: none; }
+
+:root[data-theme="light"] .shot-light { display: block; }
+:root[data-theme="light"] .shot-dark { display: none; }
+
 /* Engineering grid backdrop (echoes the app icon) — used behind the hero. */
 .bg-grid {
   background-image:

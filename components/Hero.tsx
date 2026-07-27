@@ -34,15 +34,25 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Real app screenshot: cube.fe refined + evolved under its volume constraint */}
+        {/* Real app screenshot: cube.fe refined + evolved under its volume
+            constraint. Two captures — the app follows the OS appearance, so the
+            shot should match the theme the page is being read in. Swapped by
+            `.shot-light` / `.shot-dark` in globals.css. */}
         <figure className="w-full max-w-4xl">
           <Image
-            src="/app-screenshot.png"
+            src="/app-screenshot-light.png"
             alt="Surface Evolver desktop app: .fe datafile editor, CLI with evolution output, and a cube evolved into a sphere in the 3D viewer"
             width={1280}
             height={800}
             preload
-            className="rounded-xl ring-1 ring-base-content/10 shadow-2xl"
+            className="shot-light rounded-xl ring-1 ring-base-content/10 shadow-2xl"
+          />
+          <Image
+            src="/app-screenshot-dark.png"
+            alt="Surface Evolver desktop app in dark mode: .fe datafile editor, CLI with evolution output, and a cube evolved into a sphere in the 3D viewer"
+            width={1280}
+            height={800}
+            className="shot-dark rounded-xl ring-1 ring-base-content/10 shadow-2xl"
           />
           <figcaption className="mt-4 text-sm text-base-content/40">
             cube.fe refined and evolved to a sphere under its volume constraint
