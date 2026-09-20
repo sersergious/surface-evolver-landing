@@ -3,27 +3,87 @@
   themes: light --default, dark --prefersdark;
 }
 
-/* Brand: steel blues from the app icon instead of daisyUI's stock purple. */
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+/* Vercel-flavoured monochrome: pure #fff / #000 bases, black-on-white and
+   white-on-black buttons, hairline borders, no shadows (--depth: 0). */
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
-  --color-primary: #3d6bc4;
+  color-scheme: light;
+
+  --color-base-100: #ffffff;
+  --color-base-200: #fafafa;
+  --color-base-300: #ebebeb;
+  --color-base-content: #000000;
+
+  --color-primary: #000000;
   --color-primary-content: #ffffff;
-  --color-secondary: #46708a;
+  --color-secondary: #171717;
   --color-secondary-content: #ffffff;
-  --color-accent: #2a9d8f;
+  --color-accent: #000000;
   --color-accent-content: #ffffff;
+  --color-neutral: #000000;
+  --color-neutral-content: #ffffff;
+
+  --color-info: #171717;
+  --color-info-content: #ffffff;
+  --color-success: #171717;
+  --color-success-content: #ffffff;
+  --color-warning: #171717;
+  --color-warning-content: #ffffff;
+  --color-error: #171717;
+  --color-error-content: #ffffff;
+
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
 }
 
 @plugin "daisyui/theme" {
   name: "dark";
   prefersdark: true;
-  --color-primary: #6f9be8;
-  --color-primary-content: #0d1521;
-  --color-secondary: #7ba7c2;
-  --color-secondary-content: #0d1521;
-  --color-accent: #4fc0b2;
-  --color-accent-content: #0d1521;
+  color-scheme: dark;
+
+  --color-base-100: #000000;
+  --color-base-200: #0a0a0a;
+  --color-base-300: #1a1a1a;
+  --color-base-content: #ffffff;
+
+  --color-primary: #ffffff;
+  --color-primary-content: #000000;
+  --color-secondary: #ededed;
+  --color-secondary-content: #000000;
+  --color-accent: #ffffff;
+  --color-accent-content: #000000;
+  --color-neutral: #ffffff;
+  --color-neutral-content: #000000;
+
+  --color-info: #ededed;
+  --color-info-content: #000000;
+  --color-success: #ededed;
+  --color-success-content: #000000;
+  --color-warning: #ededed;
+  --color-warning-content: #000000;
+  --color-error: #ededed;
+  --color-error-content: #000000;
+
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
 }
 
 /* Hero app screenshot: show the capture matching the active theme.
@@ -46,11 +106,11 @@
 :root[data-theme="light"] .shot-light { display: block; }
 :root[data-theme="light"] .shot-dark { display: none; }
 
-/* Engineering grid backdrop (echoes the app icon) — used behind the hero. */
+/* Hairline grid behind the hero, fading out downward. */
 .bg-grid {
   background-image:
-    linear-gradient(to right, color-mix(in oklab, currentColor 7%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklab, currentColor 7%, transparent) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: linear-gradient(to bottom, black 0%, transparent 85%);
+    linear-gradient(to right, color-mix(in oklab, currentColor 6%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, currentColor 6%, transparent) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 80%);
 }

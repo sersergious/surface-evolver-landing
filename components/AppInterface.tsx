@@ -1,80 +1,78 @@
-import {
-  FolderOpenIcon,
-  PencilSquareIcon,
-  CubeTransparentIcon,
-} from "@heroicons/react/24/outline";
-
 const panes = [
   {
-    icon: FolderOpenIcon,
-    label: "File Pane",
-    iconClass: "text-secondary",
-    pillClass: "bg-secondary/10",
-    dotClass: "bg-secondary",
-    heading: "Your surfaces, organized",
+    step: "01",
+    label: "File pane",
+    heading: "Load a surface",
     points: [
-      "Browse the built-in library of 25+ .fe example files",
-      "Upload your own datafiles — they sit alongside the bundled ones",
-      "Open several files as tabs and switch between them",
-      "Auto-restores your evolved surface on startup",
+      "20 bundled .fe examples — cube, sphere, catenoid, crystal, phelanc — all of which render",
+      "Upload your own datafiles; they sit alongside the bundled ones",
+      "Open files as tabs; switching reloads the engine into a clean state",
+      "Toggle the explorer with ⌘B",
     ],
   },
   {
-    icon: PencilSquareIcon,
+    step: "02",
     label: "Editor & CLI",
-    iconClass: "text-primary",
-    pillClass: "bg-primary/10",
-    dotClass: "bg-primary",
-    heading: "Edit the datafile, drive the engine",
+    heading: "Drive the engine",
     points: [
-      "Syntax-highlighted .fe editor with Save & Reload",
-      "CLI with the complete Surface Evolver command language — g, r, hessian, macros, quantity definitions",
-      "Run-menu shortcuts: iterate ⌘G, refine ⌘R, equiangulate ⌘U, vertex average ⌘E",
-      "Export the current surface as .fe or an exact-state .dmp",
+      "Syntax-highlighted .fe editor with Save & Reload — no restart",
+      "The complete Surface Evolver command language, verbatim",
+      "Run menu: iterate ⌘G (×100 ⇧⌘G), refine ⌘R, equiangulate ⌘U, vertex average ⌘E",
+      "Stop cancels a running command by killing the worker; the tab and the snapshot survive",
     ],
   },
   {
-    icon: CubeTransparentIcon,
-    label: "Viewer Pane",
-    iconClass: "text-accent",
-    pillClass: "bg-accent/10",
-    dotClass: "bg-accent",
-    heading: "See it evolve in real time",
+    step: "03",
+    label: "Viewer pane",
+    heading: "Watch it evolve",
     points: [
-      "WebGL mesh rendered with Three.js as it evolves",
-      "Solid, wireframe, and X-ray modes with native SE per-element colors",
-      "Click a vertex to inspect coordinates, constraints, and flags",
-      "Panels for named quantities, energy breakdown, and physics settings",
+      "Three.js mesh with solid, wireframe and X-ray modes",
+      "Native SE per-element colors, all-edge overlay, auto-fit camera",
+      "Click a vertex for id, coordinates, constraints and flags",
+      "Energy, area and element counts update live in the titlebar",
     ],
   },
 ];
 
 export default function AppInterface() {
   return (
-    <section className="bg-base-100 py-24 px-4">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16 space-y-3">
-          <h2 className="text-3xl font-bold text-base-content">
-            Three panes. One workflow.
-          </h2>
-          <p className="text-base-content/60 max-w-xl mx-auto">
-            Load a surface on the left, evolve it in the middle, watch it
-            transform on the right.
-          </p>
-        </div>
+    <section id="workflow" className="border-b border-base-content/10 bg-base-200">
+      <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
+        <p className="font-mono text-xs uppercase tracking-widest text-base-content/40">
+          Workflow
+        </p>
+        <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tighter text-balance sm:text-5xl">
+          Three panes. One window.
+        </h2>
+        <p className="mt-4 max-w-2xl text-lg text-base-content/60 text-pretty">
+          Load on the left, evolve in the middle, watch on the right — no
+          terminal, no X11, no second program.
+        </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {panes.map(({ icon: Icon, label, iconClass, pillClass, dotClass, heading, points }) => (
-            <div key={label} className="flex flex-col gap-4">
-              <div className={`inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full ${pillClass}`}>
-                <Icon className={`h-4 w-4 ${iconClass}`} />
-                <span className={`text-xs font-semibold ${iconClass}`}>{label}</span>
+        <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-base-content/10 bg-base-content/10 md:grid-cols-3">
+          {panes.map(({ step, label, heading, points }) => (
+            <div key={label} className="bg-base-100 p-8">
+              <div className="flex items-baseline gap-3">
+                <span className="font-mono text-xs text-base-content/30">
+                  {step}
+                </span>
+                <span className="font-mono text-xs uppercase tracking-widest text-base-content/40">
+                  {label}
+                </span>
               </div>
-              <h3 className="font-semibold text-base-content">{heading}</h3>
-              <ul className="space-y-2">
+              <h3 className="mt-4 text-xl font-medium tracking-tight">
+                {heading}
+              </h3>
+              <ul className="mt-5 space-y-3">
                 {points.map((point) => (
-                  <li key={point} className="flex items-start gap-2 text-sm text-base-content/60">
-                    <span className={`mt-1.5 shrink-0 h-1.5 w-1.5 rounded-full ${dotClass}`} />
+                  <li
+                    key={point}
+                    className="flex gap-3 text-sm leading-relaxed text-base-content/55"
+                  >
+                    <span
+                      aria-hidden
+                      className="mt-2 h-px w-3 shrink-0 bg-base-content/25"
+                    />
                     {point}
                   </li>
                 ))}

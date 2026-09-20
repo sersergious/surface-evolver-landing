@@ -13,9 +13,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Surface Evolver",
+  metadataBase: new URL("https://surface-evolver.vercel.app"),
+  title: "Surface Evolver — the desktop app",
   description:
-    "A native desktop app wrapping the Surface Evolver C engine — minimize surface energy with a live 3D viewer, full command language, and a built-in datafile library.",
+    "A native desktop app for macOS, Linux and Windows wrapping Ken Brakke's Surface Evolver C engine: datafile editor, the complete command language, and a live WebGL viewer in one window.",
+  openGraph: {
+    title: "Surface Evolver — the desktop app",
+    description:
+      "Minimize the energy of constrained surfaces without the terminal: datafile editor, full command language, live WebGL viewer. macOS, Linux, Windows.",
+    url: "https://surface-evolver.vercel.app",
+    siteName: "Surface Evolver",
+    images: ["/app-screenshot-light.png"],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -36,7 +46,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
