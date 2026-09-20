@@ -1,6 +1,12 @@
 @import "tailwindcss";
+/* themes: false — the custom "light"/"dark" blocks below already carry their
+   own default/prefersdark flags. Registering the built-in presets too (as
+   `themes: light --default, dark --prefersdark`) doesn't replace them: it
+   emits a second same-named theme whose theme-controller-aware selector has
+   higher specificity than ours, so daisyUI's stock purple primary and
+   mismatched per-theme radii won CSS's cascade over our overrides. */
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark;
+  themes: false;
 }
 
 @theme {
