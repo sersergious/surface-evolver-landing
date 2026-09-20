@@ -1,79 +1,100 @@
 import {
-  BookOpenIcon,
-  BoltIcon,
+  ArrowDownOnSquareStackIcon,
   ArrowPathIcon,
-  CommandLineIcon,
+  CodeBracketSquareIcon,
   CubeTransparentIcon,
-  WindowIcon,
+  CursorArrowRaysIcon,
+  RectangleGroupIcon,
+  ShieldCheckIcon,
+  Squares2X2Icon,
+  StopCircleIcon,
 } from "@heroicons/react/24/outline";
 
 const features = [
   {
     icon: CubeTransparentIcon,
-    title: "Live 3D Viewer",
+    title: "Live WebGL viewer",
     description:
-      "WebGL mesh visualization powered by Three.js. Three render modes — solid, wireframe, and X-ray — with per-element colors, interactive vertex picking, and orbit controls.",
+      "Three.js rendering with solid, wireframe and X-ray modes, native SE per-element colors, an all-edge overlay, orbit controls and an auto-fit camera. The original ships an X11/OpenGL window many users never get working.",
   },
   {
-    icon: CommandLineIcon,
-    title: "Full Command Language",
+    icon: Squares2X2Icon,
+    title: "Correct periodic rendering",
     description:
-      "Every Surface Evolver command works in the built-in CLI — iteration, hessian analysis, macros, quantity and constraint definitions. If the original engine supports it, you can run it.",
+      "Foam and crystal models wrap around a periodic cell. A C accessor exposes the engine's per-edge wrap codes, so wrapped edges are hidden instead of drawn across the view — 103 of 368 edges in phelanc.fe. Non-destructive, unlike detorus.",
   },
   {
-    icon: BookOpenIcon,
-    title: "Built-in Datafile Library",
+    icon: CodeBracketSquareIcon,
+    title: "Syntax-highlighted editor",
     description:
-      "25+ bundled .fe example files — cube, sphere, octahedron, catenoid, Kelvin-Phelan, knotty, and more — ready to load from the file pane.",
+      "Edit the .fe datafile in place with Save & Reload — change the geometry and re-run without leaving the app or restarting the engine.",
   },
   {
-    icon: BoltIcon,
-    title: "Evolve & Refine",
+    icon: CursorArrowRaysIcon,
+    title: "Click-to-inspect vertices",
     description:
-      "Iterate gradient descent, refine, equiangulate, vertex-average, and pop — from the Run menu or keyboard. Energy, area, and mesh counts update live in the titlebar.",
+      "Click any vertex for its id, coordinates, constraints and attribute flags, plus body centre-of-mass markers. In the original this is a print statement and a wall of numbers.",
   },
   {
     icon: ArrowPathIcon,
-    title: "Session Persistence",
+    title: "Topology ops with feedback",
     description:
-      "Surfaces are auto-snapshotted between sessions. Reopen the app and your evolved surface comes back — no manual save required.",
+      "Refine, equiangulate, vertex-average and pop from a menu or the keyboard — each reporting element deltas, named topology counters (pops, edgeswaps, dissolves) and ΔE instead of raw text.",
   },
   {
-    icon: WindowIcon,
-    title: "Truly Native",
+    icon: StopCircleIcon,
+    title: "A real Stop button",
     description:
-      "A real desktop window with a native menu bar and keyboard shortcuts — no browser, no server. The C engine is driven directly over FFI, and exports land in your Downloads folder.",
+      "se_run is a blocking FFI call and cannot be interrupted in band, so cancelling kills the worker process. Your tab stays and the last auto-snapshot survives. In the original, Ctrl-C takes the whole program down with your surface.",
+  },
+  {
+    icon: ShieldCheckIcon,
+    title: "Crash isolation",
+    description:
+      "The engine runs in a separate process. A segfault or an exit() on an unrecoverable error costs you a session, not the application.",
+  },
+  {
+    icon: RectangleGroupIcon,
+    title: "Session auto-restore",
+    description:
+      "The surface is snapshotted in the background after every mutating command, so your evolved state — not the original datafile — comes back after a restart.",
+  },
+  {
+    icon: ArrowDownOnSquareStackIcon,
+    title: "Library in, exports out",
+    description:
+      "20 curated example datafiles, all of which render, loadable in one click — plus upload of your own .fe files and export of the current surface as .fe or an exact-state .dmp.",
   },
 ];
 
 export default function Features() {
   return (
-    <section className="bg-base-200 py-24 px-4">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16 space-y-3">
-          <h2 className="text-3xl font-bold text-base-content">
-            Everything in one window
-          </h2>
-          <p className="text-base-content/60 max-w-xl mx-auto">
-            From loading a surface to evolving, refining, and inspecting it —
-            the full workflow without leaving the app.
-          </p>
-        </div>
+    <section id="features">
+      <div className="mx-auto max-w-6xl px-4 pt-24 sm:px-6">
+        <p className="font-mono text-xs uppercase tracking-widest text-base-content/40">
+          Features
+        </p>
+        <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tighter text-balance sm:text-5xl">
+          Everything the desktop app adds.
+        </h2>
+        <p className="mt-4 max-w-2xl text-lg text-base-content/60 text-pretty">
+          The engine&apos;s command language is preserved verbatim — nothing was
+          taken away. What follows is what sits on top of it.
+        </p>
+      </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="mx-auto mt-16 max-w-6xl border-t border-base-content/10 sm:px-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {features.map(({ icon: Icon, title, description }) => (
-            <div key={title} className="card bg-base-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="card-body gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Icon className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-base-content mb-1">{title}</h3>
-                  <p className="text-sm text-base-content/60 leading-relaxed">
-                    {description}
-                  </p>
-                </div>
-              </div>
+            <div
+              key={title}
+              className="border-b border-base-content/10 px-4 py-10 sm:border-r sm:px-8 sm:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0"
+            >
+              <Icon className="h-5 w-5 text-base-content/70" />
+              <h3 className="mt-4 font-medium tracking-tight">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-base-content/55">
+                {description}
+              </p>
             </div>
           ))}
         </div>

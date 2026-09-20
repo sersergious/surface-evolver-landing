@@ -31,7 +31,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggle}
-      className="btn btn-ghost btn-sm btn-circle"
+      className="btn btn-ghost btn-sm btn-square"
       aria-label="Toggle theme"
     >
       {theme === "dark" ? (
