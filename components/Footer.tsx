@@ -4,6 +4,7 @@ import {
   ARCHITECTURE,
   BRAKKE,
   CHANGELOG,
+  ISSUES,
   LICENSE,
   RELEASES,
   REPO,
@@ -23,7 +24,8 @@ const columns = [
     title: "Source",
     links: [
       { label: "GitHub", href: REPO },
-      { label: "Releases", href: RELEASES },
+      { label: "Latest build", href: RELEASES },
+      { label: "Known issues", href: ISSUES },
       { label: "Changelog", href: CHANGELOG },
       { label: "Architecture", href: ARCHITECTURE },
       { label: "Apache 2.0", href: LICENSE },

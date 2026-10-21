@@ -4,8 +4,8 @@ const panes = [
     label: "File pane",
     heading: "Load a surface",
     points: [
-      "20 bundled .fe examples — cube, sphere, catenoid, crystal, phelanc — all of which render",
-      "Upload your own datafiles; they sit alongside the bundled ones",
+      "20 bundled .fe examples — cube, sphere, catenoid, crystal, phelanc — all of which load",
+      "Upload your own datafiles; one with the same name as a bundled file takes its place",
       "Open files as tabs; switching reloads the engine into a clean state",
       "Toggle the explorer with ⌘B",
     ],
@@ -15,10 +15,10 @@ const panes = [
     label: "Editor & CLI",
     heading: "Drive the engine",
     points: [
-      "Syntax-highlighted .fe editor with Save & Reload — no restart",
+      "Syntax-highlighted .fe editor with one-click Save & Reload",
       "The complete Surface Evolver command language, verbatim",
-      "Run menu: iterate ⌘G (×100 ⇧⌘G), refine ⌘R, equiangulate ⌘U, vertex average ⌘E",
-      "Stop cancels a running command by killing the worker; the tab and the snapshot survive",
+      "Run menu: iterate ×10 ⌘G or ×100 ⇧⌘G, refine ⌘R, equiangulate ⌘U, vertex average ⌘E",
+      "Stop ends a running command by stopping the engine process; the app and the tab stay open",
     ],
   },
   {
@@ -27,9 +27,9 @@ const panes = [
     heading: "Watch it evolve",
     points: [
       "Three.js mesh with solid, wireframe and X-ray modes",
-      "Native SE per-element colors, all-edge overlay, auto-fit camera",
+      "Surface Evolver's own element colors, edge overlay, auto-fit camera",
       "Click a vertex for id, coordinates, constraints and flags",
-      "Energy, area and element counts update live in the titlebar",
+      "Energy and area update live in the titlebar, element counts in the viewer",
     ],
   },
 ];
@@ -42,11 +42,12 @@ export default function AppInterface() {
           Workflow
         </p>
         <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tighter text-balance sm:text-5xl">
-          Three panes. One window.
+          Three steps. One window.
         </h2>
         <p className="mt-4 max-w-2xl text-lg text-base-content/60 text-pretty">
-          Load on the left, evolve in the middle, watch on the right — no
-          terminal, no X11, no second program.
+          Load a file on the left, edit it in the middle, run commands and
+          watch the surface on the right — no terminal, no X11, no second
+          program.
         </p>
 
         <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-base-content/10 bg-base-content/10 md:grid-cols-3">

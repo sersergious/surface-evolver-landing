@@ -15,37 +15,37 @@ const features = [
     icon: CubeTransparentIcon,
     title: "Live WebGL viewer",
     description:
-      "Three.js rendering with solid, wireframe and X-ray modes, native SE per-element colors, an all-edge overlay, orbit controls and an auto-fit camera. The original ships an X11/OpenGL window many users never get working.",
+      "Three.js rendering with solid, wireframe and X-ray modes, Surface Evolver's own per-element colors, an edge overlay, orbit controls and an auto-fit camera, in a neutral light or dark theme that follows your system. The original ships an X11/OpenGL window many users never get working.",
   },
   {
     icon: Squares2X2Icon,
-    title: "Correct periodic rendering",
+    title: "Periodic surfaces",
     description:
-      "Foam and crystal models wrap around a periodic cell. A C accessor exposes the engine's per-edge wrap codes, so wrapped edges are hidden instead of drawn across the view — 103 of 368 edges in phelanc.fe. Non-destructive, unlike detorus.",
+      "Foam and crystal models wrap around a periodic cell. Edges that cross the cell boundary are hidden instead of drawn across the view — 103 of 368 in phelanc.fe — without the irreversible detorus. Facets that cross it still draw across the view in solid mode; that one is a known issue.",
   },
   {
     icon: CodeBracketSquareIcon,
     title: "Syntax-highlighted editor",
     description:
-      "Edit the .fe datafile in place with Save & Reload — change the geometry and re-run without leaving the app or restarting the engine.",
+      "Edit the .fe datafile in place, then Save & Reload — change the geometry and run it again in one click, without leaving the app.",
   },
   {
     icon: CursorArrowRaysIcon,
     title: "Click-to-inspect vertices",
     description:
-      "Click any vertex for its id, coordinates, constraints and attribute flags, plus body centre-of-mass markers. In the original this is a print statement and a wall of numbers.",
+      "Click any vertex for its id, coordinates, constraints and attribute flags, plus body center-of-mass markers. In the original this is a print statement and a wall of numbers.",
   },
   {
     icon: ArrowPathIcon,
     title: "Topology ops with feedback",
     description:
-      "Refine, equiangulate, vertex-average and pop from a menu or the keyboard — each reporting element deltas, named topology counters (pops, edgeswaps, dissolves) and ΔE instead of raw text.",
+      "Refine, equiangulate, vertex-average and pop from the Run menu or the keyboard — each reports element deltas, named topology counters (pops, edgeswaps, dissolves) and ΔE instead of raw text.",
   },
   {
     icon: StopCircleIcon,
     title: "A real Stop button",
     description:
-      "se_run is a blocking FFI call and cannot be interrupted in band, so cancelling kills the worker process. Your tab stays and the last auto-snapshot survives. In the original, Ctrl-C takes the whole program down with your surface.",
+      "A long g 100000 can be stopped mid-run. Stop ends the engine process, so the app and the tab stay open; the surface in memory goes with it, and reopening the file starts it again.",
   },
   {
     icon: ShieldCheckIcon,
@@ -57,13 +57,13 @@ const features = [
     icon: RectangleGroupIcon,
     title: "Session auto-restore",
     description:
-      "The surface is snapshotted in the background after every mutating command, so your evolved state — not the original datafile — comes back after a restart.",
+      "The surface is snapshotted in the background after every command that changes it, so relaunching the app brings back your evolved state, not the original datafile. Restore happens at launch.",
   },
   {
     icon: ArrowDownOnSquareStackIcon,
     title: "Library in, exports out",
     description:
-      "20 curated example datafiles, all of which render, loadable in one click — plus upload of your own .fe files and export of the current surface as .fe or an exact-state .dmp.",
+      "20 example datafiles, all of which load in one click — plus upload of your own .fe files and export of the current surface as .fe or an exact-state .dmp.",
   },
 ];
 
