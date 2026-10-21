@@ -63,16 +63,16 @@ export default function Hero() {
             <Image
               src="/app-screenshot-light.png"
               alt="Surface Evolver desktop app: .fe datafile editor, command log, and a cube evolved into a sphere in the 3D viewer"
-              width={1280}
-              height={800}
+              width={1220}
+              height={812}
               fetchPriority="high"
               className="shot-light w-full"
             />
             <Image
               src="/app-screenshot-dark.png"
               alt="Surface Evolver desktop app in dark mode: .fe datafile editor, command log, and a cube evolved into a sphere in the 3D viewer"
-              width={1280}
-              height={800}
+              width={1220}
+              height={812}
               fetchPriority="high"
               className="shot-dark w-full"
             />
