@@ -1,23 +1,26 @@
+// Real engine output for cube.fe, captured from the app's worker (g 100 shows
+// its last line). eigenprobe 0 counts Hessian eigenvalues below/at/above 0:
+// none negative, so the evolved surface is stable.
 const session = [
-  { prompt: "cube.fe", cmd: "r", out: "refine: 12 → 48 facets, 30 edges" },
-  { prompt: "cube.fe", cmd: "g 100", out: "energy 6.1872 → 5.9146   ΔE −0.2726" },
-  { prompt: "cube.fe", cmd: "u", out: "equiangulate: 7 edgeswaps" },
-  { prompt: "cube.fe", cmd: "print body[1].volume", out: "1.000000" },
-  { prompt: "cube.fe", cmd: "hessian", out: "eigenvalues: 12 positive, 0 negative" },
+  { prompt: "cube.fe", cmd: "r", out: "Vertices: 50  Edges: 144  Facets: 96  Bodies: 1  Facetedges: 288" },
+  { prompt: "cube.fe", cmd: "g 100", out: "  1. area:  4.90195578472321 energy:  4.90195578472321  scale: 0.358750" },
+  { prompt: "cube.fe", cmd: "u", out: "Edges switched in equiangulation: 0" },
+  { prompt: "cube.fe", cmd: "print body[1].volume", out: "1" },
+  { prompt: "cube.fe", cmd: "eigenprobe 0", out: "Eigencounts:    0 <,  0 ==,  49 >" },
 ];
 
 const constraints = [
   {
     title: "Soapfilm model only",
-    body: "STRING and SIMPLEX datafiles are rejected at load with an explanation — neither model's cells can be drawn honestly by a triangulated-facet mesh. The engine still computes them; run reaches them.",
+    body: "STRING and SIMPLEX datafiles are rejected at load with an explanation — neither model's cells can be drawn honestly by a triangulated-facet mesh. The engine still computes them; the command line still reaches them.",
   },
   {
     title: "Power features are CLI-only",
-    body: "hessian and eigenvalue stability analysis, edgeswap, dissolve, jiggle, optimize, conj_grad, saddle. They work — there are just no buttons.",
+    body: "Hessian and eigenvalue stability analysis (hessian, eigenprobe, ritz), edgeswap, dissolve, jiggle, optimize, conj_grad, saddle. They work — there are just no buttons.",
   },
   {
     title: "No structured duplicates",
-    body: "The physics and named-quantity panels were removed in 0.2.1: set gravity_constant 980, print body[1].volume and v already do the job. A second path is a second thing to keep correct.",
+    body: "There are no physics or named-quantity panels: set gravity_constant 980, print body[1].volume and v already do the job. A second path is a second thing to keep correct.",
   },
   {
     title: "One live session at a time",
