@@ -63,22 +63,22 @@ export default function Hero() {
             <Image
               src="/app-screenshot-light.png"
               alt="Surface Evolver desktop app: .fe datafile editor, command log, and a cube evolved into a sphere in the 3D viewer"
-              width={1220}
-              height={812}
+              width={1280}
+              height={800}
               fetchPriority="high"
               className="shot-light w-full"
             />
             <Image
               src="/app-screenshot-dark.png"
               alt="Surface Evolver desktop app in dark mode: .fe datafile editor, command log, and a cube evolved into a sphere in the 3D viewer"
-              width={1220}
-              height={812}
+              width={1280}
+              height={800}
               fetchPriority="high"
               className="shot-dark w-full"
             />
           </div>
           <figcaption className="mt-4 text-center text-sm text-base-content/40">
-            <code className="font-mono">cube.fe</code> refined twice and evolved
+            <code className="font-mono">cube.fe</code> refined three times and evolved
             to a sphere under its volume constraint — energy and area update
             live in the titlebar, mesh counts in the viewer.
           </figcaption>
