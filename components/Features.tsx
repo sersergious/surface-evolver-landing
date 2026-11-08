@@ -21,7 +21,7 @@ const features = [
     icon: Squares2X2Icon,
     title: "Periodic surfaces",
     description:
-      "Foam and crystal models wrap around a periodic cell. Edges that cross the cell boundary are hidden instead of drawn across the view — 103 of 368 in phelanc.fe — without the irreversible detorus. Facets that cross it still draw across the view in solid mode; that one is a known issue.",
+      "Foam and crystal models wrap around a periodic cell. Facets that cross the cell boundary are drawn whole, next to their neighbours, the way Surface Evolver's own connected view does: in phelanc.fe the longest facet side went from 2.64 to 0.63. Edges that cross it are hidden rather than drawn across the view. Neither touches the surface, unlike the irreversible detorus.",
   },
   {
     icon: CodeBracketSquareIcon,

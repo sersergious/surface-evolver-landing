@@ -1,4 +1,4 @@
-import { AppleIcon, LinuxIcon, WindowsIcon } from "./icons";
+import { AppleIcon, LinuxIcon } from "./icons";
 import { CHANGELOG, DOWNLOADS, ISSUES, RELEASES, REPO } from "@/lib/release";
 
 const platforms = [
@@ -7,7 +7,7 @@ const platforms = [
     icon: AppleIcon,
     href: DOWNLOADS.macos,
     file: "SurfaceEvolver-macos-arm64.dmg",
-    specs: ["Apple Silicon (arm64)", "WKWebView rendering", "Built on macOS 14"],
+    specs: ["Apple Silicon (arm64)", "WKWebView rendering", "Built on macOS 26"],
     note: "Ad-hoc signed, not notarized — first launch needs right-click → Open.",
   },
   {
@@ -17,16 +17,6 @@ const platforms = [
     file: "SurfaceEvolver-linux-x64.deb",
     specs: ["x86-64", "WebKitGTK rendering", "Debian / Ubuntu package"],
     note: "Needs libwebkit2gtk-4.1 from your distribution's repositories.",
-  },
-  {
-    name: "Windows",
-    icon: WindowsIcon,
-    href: DOWNLOADS.windows,
-    file: "SurfaceEvolver-windows-x64-setup.exe",
-    specs: ["x86-64", "WebView2 rendering", "NSIS installer"],
-    note: "Unsigned — SmartScreen will warn on first run.",
-    footnote:
-      "Requires testing: the installer is built automatically with every release, but hasn't been verified on a Windows machine yet.",
   },
 ];
 
@@ -45,7 +35,8 @@ export default function Download() {
             <p className="mt-4 max-w-2xl text-lg text-base-content/60 text-pretty">
               Free, open source, Apache 2.0. No account, no compiler, no X11 —
               the engine ships inside the installer. Each installer is the
-              latest build that passed the full test suite.
+              latest build that passed the full test suite. macOS and Linux
+              only: Windows is not supported.
             </p>
           </div>
           <div className="flex items-center gap-3 font-mono text-xs text-base-content/40">
@@ -76,8 +67,8 @@ export default function Download() {
           </div>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-base-content/10 bg-base-content/10 md:grid-cols-3">
-          {platforms.map(({ name, icon: Icon, href, file, specs, note, footnote }) => (
+        <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-base-content/10 bg-base-content/10 md:grid-cols-2">
+          {platforms.map(({ name, icon: Icon, href, file, specs, note }) => (
             <div key={name} className="flex flex-col bg-base-100 p-8">
               <Icon className="h-6 w-6" />
               <h3 className="mt-5 text-xl font-medium tracking-tight">{name}</h3>
@@ -95,11 +86,6 @@ export default function Download() {
               <p className="mt-4 text-xs leading-relaxed text-base-content/45">
                 {note}
               </p>
-              {footnote && (
-                <p className="mt-2 text-xs leading-relaxed text-base-content/45">
-                  {footnote}
-                </p>
-              )}
             </div>
           ))}
         </div>

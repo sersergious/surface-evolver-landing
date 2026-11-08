@@ -25,7 +25,7 @@ export default function Hero() {
           </h1>
 
           <p className="max-w-2xl text-lg leading-relaxed text-base-content/60 text-pretty">
-            A native desktop app for macOS, Linux and Windows that wraps Ken
+            A native desktop app for macOS and Linux that wraps Ken
             Brakke&apos;s{" "}
             <a
               href={BRAKKE}

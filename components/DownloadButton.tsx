@@ -3,21 +3,23 @@
 import { useEffect, useState } from "react";
 import { DOWNLOADS } from "@/lib/release";
 
-type Platform = keyof typeof DOWNLOADS;
+// macOS and Linux only. Anyone else (Windows included) gets the download
+// section, which says so, rather than a file their system can't run.
+type Platform = keyof typeof DOWNLOADS | "other";
 
 const LABEL: Record<Platform, string> = {
   macos: "Download for macOS",
   linux: "Download for Linux",
-  windows: "Download for Windows",
+  other: "Downloads: macOS and Linux",
 };
 
 // ponytail: userAgent sniffing, not userAgentData — the label is cosmetic and
 // every platform stays one click away in the download section below.
 function detect(): Platform {
   const ua = navigator.userAgent;
-  if (/Win/i.test(ua)) return "windows";
+  if (/Mac/i.test(ua) && !/iPhone|iPad/i.test(ua)) return "macos";
   if (/Linux|X11/i.test(ua) && !/Android/i.test(ua)) return "linux";
-  return "macos";
+  return "other";
 }
 
 export default function DownloadButton({
@@ -30,7 +32,7 @@ export default function DownloadButton({
   useEffect(() => setPlatform(detect()), []);
 
   return (
-    <a href={DOWNLOADS[platform]} className={className}>
+    <a href={platform === "other" ? "#download" : DOWNLOADS[platform]} className={className}>
       {LABEL[platform]}
     </a>
   );

@@ -16,11 +16,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://surface-evolver.vercel.app"),
   title: "Surface Evolver — the desktop app",
   description:
-    "A native desktop app for macOS, Linux and Windows wrapping Ken Brakke's Surface Evolver C engine: datafile editor, the complete command language, and a live WebGL viewer in one window.",
+    "A native desktop app for macOS and Linux wrapping Ken Brakke's Surface Evolver C engine: datafile editor, the complete command language, and a live WebGL viewer in one window.",
   openGraph: {
     title: "Surface Evolver — the desktop app",
     description:
-      "Minimize the energy of constrained surfaces without the terminal: datafile editor, full command language, live WebGL viewer. macOS, Linux, Windows.",
+      "Minimize the energy of constrained surfaces without the terminal: datafile editor, full command language, live WebGL viewer. macOS and Linux.",
     url: "https://surface-evolver.vercel.app",
     siteName: "Surface Evolver",
     images: ["/app-screenshot-light.png"],

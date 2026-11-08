@@ -8,7 +8,6 @@ const asset = (name: string) => `${REPO}/releases/download/latest/${name}`;
 export const DOWNLOADS = {
   macos: asset("SurfaceEvolver-macos-arm64.dmg"),
   linux: asset("SurfaceEvolver-linux-x64.deb"),
-  windows: asset("SurfaceEvolver-windows-x64-setup.exe"),
 } as const;
 
 export const RELEASES = `${REPO}/releases/tag/latest`;
