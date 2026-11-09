@@ -43,9 +43,9 @@ const features = [
   },
   {
     icon: StopCircleIcon,
-    title: "A real Stop button",
+    title: "A Stop button that keeps your work",
     description:
-      "A long g 100000 can be stopped mid-run. Stop ends the engine process, so the app and the tab stay open; the surface in memory goes with it, and reopening the file starts it again.",
+      "A long g 100000 can be stopped mid-run, and the surface stays as far as it evolved: Stop interrupts the command instead of throwing the engine away. Only if the engine doesn't respond does Stop end it, and the app and the tab stay open either way.",
   },
   {
     icon: ShieldCheckIcon,
