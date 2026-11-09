@@ -24,7 +24,7 @@ const constraints = [
   },
   {
     title: "One live session at a time",
-    body: "One engine per process, by design — that is what buys crash isolation and cancel-by-kill. Open files are tabs; switching reloads.",
+    body: "One engine per process, by design — that is what buys crash isolation and a Stop that always works. Open files are tabs; switching reloads.",
   },
 ];
 

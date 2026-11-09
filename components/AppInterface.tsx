@@ -17,8 +17,8 @@ const panes = [
     points: [
       "Syntax-highlighted .fe editor with one-click Save & Reload",
       "The complete Surface Evolver command language, verbatim",
-      "Run menu: iterate ×10 ⌘G or ×100 ⇧⌘G, refine ⌘R, equiangulate ⌘U, vertex average ⌘E",
-      "Stop ends a running command by stopping the engine process; the app and the tab stay open",
+      "Run menu: iterate ×10, ×100, refine, equiangulate, vertex average (⌘G, ⇧⌘G, ⌘R, ⌘U, ⌘E on macOS)",
+      "Stop interrupts a running command and keeps the surface as far as it evolved",
     ],
   },
   {
@@ -27,7 +27,7 @@ const panes = [
     heading: "Watch it evolve",
     points: [
       "Three.js mesh with solid, wireframe and X-ray modes",
-      "Surface Evolver's own element colors, edge overlay, auto-fit camera",
+      "Surface Evolver's own element colors, edge overlay; the camera frames once and keeps your view",
       "Click a vertex for id, coordinates, constraints and flags",
       "Energy and area update live in the titlebar, element counts in the viewer",
     ],

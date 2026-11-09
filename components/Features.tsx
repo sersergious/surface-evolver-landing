@@ -15,7 +15,7 @@ const features = [
     icon: CubeTransparentIcon,
     title: "Live WebGL viewer",
     description:
-      "Three.js rendering with solid, wireframe and X-ray modes, Surface Evolver's own per-element colors, an edge overlay, orbit controls and an auto-fit camera, in a neutral light or dark theme that follows your system. The original ships an X11/OpenGL window many users never get working.",
+      "Three.js rendering with solid, wireframe and X-ray modes, Surface Evolver's own per-element colors, an edge overlay and orbit controls. The camera frames a surface once, when it loads, and keeps your view through every command after, in a neutral light or dark theme that follows your system. The original ships an X11/OpenGL window many users never get working.",
   },
   {
     icon: Squares2X2Icon,
@@ -39,7 +39,7 @@ const features = [
     icon: ArrowPathIcon,
     title: "Topology ops with feedback",
     description:
-      "Refine, equiangulate, vertex-average and pop from the Run menu or the keyboard — each reports element deltas, named topology counters (pops, edgeswaps, dissolves) and ΔE instead of raw text.",
+      "Refine, equiangulate, vertex-average and pop from the Run menu (or the keyboard, on macOS) — each reports element deltas, named topology counters (pops, edgeswaps, dissolves) and ΔE instead of raw text.",
   },
   {
     icon: StopCircleIcon,
@@ -63,7 +63,7 @@ const features = [
     icon: ArrowDownOnSquareStackIcon,
     title: "Library in, exports out",
     description:
-      "20 example datafiles, all of which load in one click — plus upload of your own .fe files and export of the current surface as .fe or an exact-state .dmp.",
+      "20 example datafiles, all of which load in one click, with their read section run as Surface Evolver runs it, so procedures like gogo are there — plus upload of your own .fe files and export of the current surface as .fe or an exact-state .dmp.",
   },
 ];
 
